@@ -2,8 +2,8 @@ import numpy as np
 import pandas as pd
 import datetime as dt
 from scipy.stats import norm
-import yfinance as yf 
 from ta.volatility import average_true_range as ATR
+from yahoo_finance.tickers import Ticker
 
 class blackScholesCalculator():
 
@@ -63,10 +63,8 @@ class blackScholesCalculator():
     
     def volatility(self):
 
-        sym = yf.Ticker(self.ticker)
-        history = sym.history(period = 'max')
-        history.sort_index(inplace=True)
-        history["Date"] = pd.to_datetime(history.index.tz_localize(None))
+        sym = Ticker(self.ticker)
+        history = sym.df
 
         if self.ref_date is not  None:
             history = history.loc[history["Date"] <= pd.to_datetime(self.ref_date), ]
