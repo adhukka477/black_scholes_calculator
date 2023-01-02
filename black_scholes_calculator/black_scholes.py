@@ -67,7 +67,7 @@ class blackScholesCalculator():
         history = sym.df
 
         if self.ref_date is not  None:
-            history = history.loc[history["Date"] <= pd.to_datetime(self.ref_date), ]
+            history = history.loc[pd.to_datetime(history["Date"]) <= pd.to_datetime(self.ref_date), ]
 
         atr = ATR(high = history.High, low = history.Low, close = history.Close, window = self.w)
 
