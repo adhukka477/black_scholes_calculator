@@ -71,4 +71,5 @@ class blackScholesCalculator():
 
         atr = ATR(high = history.High, low = history.Low, close = history.Close, window = self.w)
 
-        return ((0.50 * atr[-1]) * (np.sqrt(365)))/history.Close[-1]
+        return ((0.50 * atr.values[-1]) * (np.sqrt(365)))/history.Close.values[-1]
+
