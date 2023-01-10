@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='black_scholes_calculator',
+    name='options_calculator',
     version='0.0.2',
     author='Alishan Dhukka',
     author_email='alishandhukka@gmail.com',
@@ -16,6 +16,6 @@ setuptools.setup(
         "Bug Tracker": "https://github.com/adhukka477/black_scholes_calculator"
     },
     license='MIT',
-    packages=['black_scholes_calculator'],
+    packages=['options_calculator'],
     install_requires=['numpy', 'pandas', 'datetime', 'bs4', 'scipy', 'ta', 'yahoo-finance @ git+https://github.com/adhukka477/yahoo_finance.git'],
 )
